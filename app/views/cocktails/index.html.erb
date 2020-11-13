@@ -5,7 +5,7 @@
 
 <div class="container">
 
-  <h1>All our cocktails (<%= @cocktails.count %>)</h1>
+  <h1>All of our cocktails (<%= @cocktails.count %>)</h1>
   <div class="cards-container">
     <% @cocktails.each do |cocktail| %>
       <%= link_to cocktail_path(cocktail.id) do %>
