@@ -5,13 +5,13 @@
 
 <div class="container">
 
-  <h1>Add your cocktail</h1>
+  <h1>Edit this cocktail</h1>
 
   <%= simple_form_for @cocktail do |f| %>
       <%= f.input :name %>
       <%= f.input :description %>
       <%= f.input :photo, as: :file %>
-      <%= f.submit "Post your creation", class: "btn btn-primary" %>
+      <%= f.submit "Update this creation", class: "btn btn-primary" %>
     <% end %>
 
 </div>

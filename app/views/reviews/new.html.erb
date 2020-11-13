@@ -1,0 +1,17 @@
+<div class="cocktail-banner" style="background-image: url('https://images.pexels.com/photos/4667084/pexels-photo-4667084.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500');" >
+  <h1> vox populi </h1>
+  <h4> be the critic, have your say </h4>
+</div>
+
+<div class="container">
+
+  <h1>Add your review</h1>
+
+  <%= simple_form_for [ @cocktail, @review ] do |f| %>
+      <%= f.input :username, label: 'Your alias' %>
+      <%= f.input :rating, :collection => [0, 1, 2, 3, 4, 5] %>
+      <%= f.input :content %>
+      <%= f.submit "Submit review", class: "btn btn-primary" %>
+    <% end %>
+
+</div>

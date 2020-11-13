@@ -1,4 +1,4 @@
-<div class="cocktail-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/webcarmine-s-amaretto-sidecar-1571169801.jpg');" >
+<div class="cocktail-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @cocktail.photo.key, height: 600, width: 1200, crop: :fill %>)" >
   <h1> <%=@cocktail.name%> </h1>
 </div>
 
@@ -7,10 +7,9 @@
   <div class="show-container">
     <div class="description-container">
       <h3>Description</h3>
-      <p> <%= @cocktail.description %>
+      <p> <%= @cocktail.description %> </p>
       <p>
-        <%= link_to 'Edit', cocktail_path(@cocktail.id) %>
-        <%= link_to 'Delete', cocktail_path(@cocktail.id) %>
+        <%= link_to 'Edit', edit_cocktail_path(@cocktail.id) %>
       </p>
     </div>
 
@@ -19,12 +18,28 @@
         <% @doses.each do |dose| %>
       <p>
           <%="#{dose.ingredient.name} | #{dose.description} |" %>
-          <%= link_to 'Delete', cocktail_dose_path(dose.id), method: :delete,
+          <%= link_to 'Delete', dose_path(dose.id), method: :delete,
                 data: { confirm: "Are you sure?" } %>
         <% end %>
       </p>
       <p><%= link_to 'Add an ingredient', new_cocktail_dose_path(@cocktail.id) %></p>
     </div>
+  </div>
+
+  <div class="show-container">
+    <div class="description-container">
+      <h3>Reviews</h3>
+      <p>
+      <% @reviews.each do |review| %>
+        <strong><%=review.username%></strong> gives <%= '⭐️' * review.rating %>, says <i>"<%= review.content %>"</i>
+      </p>
+      <% end unless @reviews.nil? %>
+    </div>
+
+    <div class="ingredients-container">
+      <p><%= link_to 'Add a review', new_cocktail_review_path(@cocktail.id), class:"btn btn-primary" %></p>
+    </div>
+
   </div>
 
 </div>

@@ -1,6 +1,15 @@
 .show-container {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+
+.description-container {
+  width: 50%;
+}
+
+.ingredients-container {
+  width: 25%;
 }
 
 .container {
