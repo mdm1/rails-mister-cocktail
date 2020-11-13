@@ -9,9 +9,26 @@
   <div class="cards-container">
     <% @cocktails.each do |cocktail| %>
       <%= link_to cocktail_path(cocktail.id) do %>
+        <% @average_array = [] %>
+        <% cr = cocktail.reviews %>
+        <% cr.each do |cr| %>
+          <% @average_array.push(cr.rating) %>
+            <% if cr.nil?
+              @cra = 0
+            else
+              @cra = (@average_array.sum / @average_array.count)
+            end %>
+        <% end %>
+
         <div class="card-container">
           <div class="card-name">
             <h2><%= cocktail.name %></h2>
+                      <% if @cra == 0
+                        result = "No reviews yet"
+                      else
+                        result = "⭐️" * @cra
+                      end %>
+            <h2><%= result %></h2>
           </div>
           <div class="card-image">
             <%= cl_image_tag cocktail.photo.key, height: 170, width: 300, crop: :fill %>
@@ -22,10 +39,3 @@
   </div>
 
 </div>
-
-<!-- cr = cocktail.reviews
-cr.each do |cr|
-  average_array.push(cr.rating)
-end
-cra = average_array.sum
- -->

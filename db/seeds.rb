@@ -13,7 +13,7 @@ drinks = open(url).read
 ingredient_hash = JSON.parse(drinks).transform_keys(&:to_sym)
 drinks_array = ingredient_hash[:drinks]
 
-puts 'Creating 10 fake cocktails...'
+puts 'Creating ingredients...'
 
 drinks_array.each do |hash|
   ingredient = Ingredient.create!(
