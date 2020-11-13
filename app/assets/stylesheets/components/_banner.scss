@@ -1,0 +1,39 @@
+.home-banner {
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), asset-url('cocktail.jpg') ;
+  background-size: cover;
+  background-position: right;
+  height: 100vh;
+  color: #eee;
+  text-align: center;
+  padding-top: 40vh;
+  h1 {
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+  h4 {
+    color: white;
+    opacity: .8;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+  margin-bottom: 20px;
+}
+
+.cocktail-banner {
+  background-size: cover;
+  height: 50vh;
+  color: #eee;
+  text-align: center;
+  padding-top: 20vh;
+  h1 {
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+  h4 {
+    color: white;
+    opacity: .8;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+  margin-bottom: 20px;
+}
+
+

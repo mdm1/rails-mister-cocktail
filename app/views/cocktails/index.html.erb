@@ -1,0 +1,23 @@
+<div class="home-banner">
+  <h1>shaken not stirred</h1>
+  <h4>find your treat</h4>
+</div>
+
+<div class="container">
+
+  <h1>All our cocktails (<%= @cocktails.count %>)</h1>
+  <div class="cards-container">
+    <% @cocktails.each do |cocktail| %>
+      <%= link_to cocktail_path(cocktail.id) do %>
+        <div class="card-container">
+          <div class="card-name">
+            <h2><%= cocktail.name %></h2>
+          </div>
+          <div class="card-image">
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+</div>

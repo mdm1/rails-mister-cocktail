@@ -1,0 +1,16 @@
+<div class="cocktail-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/4667084/pexels-photo-4667084.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500');" >
+  <h1> you're the artist </h1>
+  <h4> show us what you've got</h4>
+</div>
+
+<div class="container">
+
+  <h1>Add your cocktail</h1>
+
+  <%= simple_form_for @cocktail do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.submit "Post your creation", class: "btn btn-primary" %>
+    <% end %>
+
+</div>

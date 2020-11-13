@@ -1,0 +1,30 @@
+<div class="cocktail-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/webcarmine-s-amaretto-sidecar-1571169801.jpg');" >
+  <h1> <%=@cocktail.name%> </h1>
+</div>
+
+<div class="container">
+
+  <div class="show-container">
+    <div class="description-container">
+      <h3>Description</h3>
+      <p> <%= @cocktail.description %>
+      <p>
+        <%= link_to 'Edit', cocktail_path(@cocktail.id) %>
+        <%= link_to 'Delete', cocktail_path(@cocktail.id) %>
+      </p>
+    </div>
+
+    <div class="ingredients-container">
+      <h3>Ingredients</h3>
+        <% @doses.each do |dose| %>
+      <p>
+          <%="#{dose.ingredient.name} | #{dose.description} |" %>
+          <%= link_to 'Delete', cocktail_dose_path(dose.id), method: :delete,
+                data: { confirm: "Are you sure?" } %>
+        <% end %>
+      </p>
+      <p><%= link_to 'Add an ingredient', new_cocktail_dose_path(@cocktail.id) %></p>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,16 @@
+<div class="cocktail-banner" style="background-image: url('https://images.pexels.com/photos/4667084/pexels-photo-4667084.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500');" >
+  <h1> go wild with wonder </h1>
+  <h4> contribute to the masterpiece </h4>
+</div>
+
+<div class="container">
+
+  <h1>Add your ingredients</h1>
+
+  <%= simple_form_for [ @cocktail, @dose ] do |f| %>
+      <%= f.input :ingredient, :collection => @ingredients %>
+      <%= f.input :description %>
+      <%= f.submit "Add your ingredient", class: "btn btn-primary" %>
+    <% end %>
+
+</div>
